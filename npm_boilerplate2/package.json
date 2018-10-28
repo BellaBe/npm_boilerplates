@@ -1,0 +1,27 @@
+{
+  "name": "npm-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": { 
+    "lint": "jshint ./assets/scripts/*.js",
+    "test": " mocha test",
+    "minify:js": "uglifyjs assets/scripts/main.js -o dist/pubic/js/main.min.js",
+    "minify:css": "cleancss assets/css/main.css -o",
+    "build": "npm run test -s && npm run minify:js -s && npm run minify:css -s",
+    "pretest": "npm run lint -s",
+    "watch": "watch 'npm run minify:js -s && npm run minify:css' assets/scripts/ assets/css/",
+    "server": "http-server dist/public/"
+  },
+  "keywords": [],
+  "author": "BellaBe <bella.belgarokova@hotmail.com> (http://www.bellabelgarokova.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css": "^4.2.1",
+    "http-server": "^0.11.1",
+    "jshint": "^2.9.6",
+    "mocha": "^5.2.0",
+    "uglify-js": "^3.4.9",
+    "watch": "^1.0.2"
+  }
+}
